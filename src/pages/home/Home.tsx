@@ -11,7 +11,7 @@ function Home() {
         <div className="container grid grid-cols-1 text-[#05256F]">
           <div className="flex flex-col gap-4 items-center justify-center py-4">
             <img
-              src="public/logoEstranho.jpg"
+              src="logoEstranho.jpg"
               alt="Logo do Observatório"
               className="max-h-48 md:max-h-72 rounded-md"
             />
