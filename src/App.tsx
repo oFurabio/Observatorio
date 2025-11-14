@@ -1,17 +1,15 @@
-import Home from './pages/home/Home'
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
+import Home from "./pages/home/Home";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className='min-h-screen'>
-        <Home />
-      </div>
+      <Home />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
