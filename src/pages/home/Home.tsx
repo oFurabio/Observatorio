@@ -24,16 +24,16 @@ function Home() {
                 Enquanto isso, nos acompanhe pelo LinkedIn!
               </p>
             </div>
-            <div className="flex items-center text-white gap-2 border-2 bg-[#0072b1] rounded-md p-2 hover:scale-110 duration-300 text-xl md:text-4xl hover:cursor-pointer">
-              <a
-                href="https://www.linkedin.com/company/104602728"
-                target="_blank"
-                rel="author"
-              >
-                LinkedIn
-              </a>
-              <LinkedinLogoIcon size={50} />
-            </div>
+            <a
+              href="https://www.linkedin.com/company/104602728"
+              target="_blank"
+              rel="author"
+            >
+              <div className="flex items-center text-white gap-2 border-2 bg-[#0072b1] rounded-md p-2 hover:scale-110 duration-300 text-xl md:text-4xl hover:cursor-pointer">
+                <p>LinkedIn</p>
+                <LinkedinLogoIcon size={50} />
+              </div>
+            </a>
             <div className="text-emerald-500 flex items-center justify-center gap-2 text-lg md:text-3xl">
               <WhatsappLogoIcon size={40} />
               <p className="text-[#05256F]">(11) 94276-9097</p>
