@@ -22,9 +22,11 @@ function Navbar() {
 
   return (
     <nav className="w-full bg-[#707070] text-[#05256F]">
-      <div className="flex items-center justify-between h-[8vh] px-8">
-
-        <Link to="/home" className="flex flex-col text-2xl md:text-4xl font-bold">
+      <div className="flex items-center justify-between h-[8vh] px-8 md:px-16 lg:px-20 xl:px-24 2xl:px-28">
+        <Link
+          to="/home"
+          className="flex flex-col text-2xl md:text-4xl font-bold"
+        >
           <p>Observatório</p>
           <p>do Fomento</p>
         </Link>
@@ -38,28 +40,42 @@ function Navbar() {
           </li>
         </ul>
 
-        <button
-          className="md:hidden text-3xl"
-          onClick={() => setOpen(!open)}
-        >
+        <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
           ☰
         </button>
       </div>
 
-      {open && (
-        <ul className="md:hidden flex flex-col items-center gap-6 py-6 text-xl font-black bg-[#707070]">
-          <li>
-            <Link to="/home" onClick={() => setOpen(false)}>
-              Início
-            </Link>
-          </li>
-          <li>
-            <Link to="/sobre" onClick={() => setOpen(false)}>
-              Sobre
-            </Link>
-          </li>
-        </ul>
-      )}
+      <ul
+        className={`
+          md:hidden
+          fixed right-0 top-[8vh]
+          bg-[#707070]
+
+          flex flex-col
+          items-center
+          gap-4
+          px-6
+          text-xl
+          font-black
+
+          overflow-hidden
+          transition-all
+          duration-150
+          ease-in-out
+          ${open ? "max-h-40 opacity-100 py-4" : "max-h-0 opacity-0 py-0"}
+      `}
+      >
+        <li>
+          <Link to="/home" onClick={() => setOpen(false)}>
+            Início
+          </Link>
+        </li>
+        <li>
+          <Link to="/sobre" onClick={() => setOpen(false)}>
+            Sobre
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }
