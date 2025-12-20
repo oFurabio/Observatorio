@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const underlineTransitory = `
     relative
     after:content-['']
@@ -18,22 +21,46 @@ function Navbar() {
   `;
 
   return (
-    <>
-      <div className="w-full flex items-center bg-[#707070] text-[#05256F] h-[8vh]">
-        <div className="flex flex-col text-2xl md:text-4xl font-bold mx-8">
-          <Link to='home'>
-            <p>Observatório</p>
-            <p>do Fomento</p>
-          </Link>
-        </div>
-        <div className="container">
-          <ul className="flex justify-end text-xl md:text-2xl font-black gap-8">
-            <li className={underlineTransitory}><Link to='home'>Início</Link></li>
-            <li className={underlineTransitory}><Link to='sobre'>Sobre</Link></li>
-          </ul>
-        </div>
+    <nav className="w-full bg-[#707070] text-[#05256F]">
+      <div className="flex items-center justify-between h-[8vh] px-8">
+
+        <Link to="/home" className="flex flex-col text-2xl md:text-4xl font-bold">
+          <p>Observatório</p>
+          <p>do Fomento</p>
+        </Link>
+
+        <ul className="hidden md:flex text-xl md:text-2xl font-black gap-8">
+          <li className={underlineTransitory}>
+            <Link to="/home">Início</Link>
+          </li>
+          <li className={underlineTransitory}>
+            <Link to="/sobre">Sobre</Link>
+          </li>
+        </ul>
+
+        <button
+          className="md:hidden text-3xl"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
       </div>
-    </>
+
+      {open && (
+        <ul className="md:hidden flex flex-col items-center gap-6 py-6 text-xl font-black bg-[#707070]">
+          <li>
+            <Link to="/home" onClick={() => setOpen(false)}>
+              Início
+            </Link>
+          </li>
+          <li>
+            <Link to="/sobre" onClick={() => setOpen(false)}>
+              Sobre
+            </Link>
+          </li>
+        </ul>
+      )}
+    </nav>
   );
 }
 
