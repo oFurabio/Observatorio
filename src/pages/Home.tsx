@@ -3,6 +3,7 @@ import {
   LinkedinLogoIcon,
   WhatsappLogoIcon,
 } from "@phosphor-icons/react";
+import { CTAButton } from "../components/CTAButton";
 
 function Home() {
   return (
@@ -34,6 +35,9 @@ function Home() {
                 <LinkedinLogoIcon size={50} />
               </div>
             </a>
+            <CTAButton href="/servicos">
+              Conheça nossos serviços institucionais
+            </CTAButton>
             <div className="text-emerald-500 flex items-center justify-center gap-2 text-lg md:text-3xl">
               <WhatsappLogoIcon size={40} />
               <p className="text-[#05256F]">(11) 94276-9097</p>

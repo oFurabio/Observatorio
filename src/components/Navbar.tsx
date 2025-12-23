@@ -23,10 +23,7 @@ function Navbar() {
   return (
     <nav className="w-full bg-[#707070] text-[#05256F]">
       <div className="flex items-center justify-between h-[8vh] px-8 md:px-16 lg:px-20 xl:px-24 2xl:px-28">
-        <Link
-          to="/home"
-          className="flex flex-col text-xl md:text-3xl font-bold"
-        >
+        <Link to="/" className="flex flex-col text-xl md:text-3xl font-bold">
           <h1 className="md:hover:scale-105 md:duration-150 uppercase">
             Observatório
             <span className="flex justify-start">do Fomento</span>
@@ -35,10 +32,13 @@ function Navbar() {
 
         <ul className="hidden md:flex text-xl md:text-2xl font-black gap-8">
           <li className={underlineTransitory}>
-            <Link to="/home">Início</Link>
+            <Link to="/">Início</Link>
           </li>
           <li className={underlineTransitory}>
-            <Link to="/sobre">Quem somos</Link>
+            <Link to="/servicos">Serviços</Link>
+          </li>
+          <li className={underlineTransitory}>
+            <Link to="/quem-somos">Quem somos</Link>
           </li>
         </ul>
 
@@ -68,12 +68,17 @@ function Navbar() {
       `}
       >
         <li>
-          <Link to="/home" onClick={() => setOpen(false)}>
+          <Link to="/" onClick={() => setOpen(false)}>
             Início
           </Link>
         </li>
         <li>
-          <Link to="/sobre" onClick={() => setOpen(false)}>
+          <Link to="/servicos" onClick={() => setOpen(false)}>
+            Serviços
+          </Link>
+        </li>
+        <li>
+          <Link to="/quem-somos" onClick={() => setOpen(false)}>
             Quem somos
           </Link>
         </li>
