@@ -1,7 +1,7 @@
 function Sobre() {
   const contentContainer = `flex flex-col md:flex-row gap-2 bg-white rounded-2xl mx-8 text-2xl md:mx-16 md:text-3xl`;
   const contentHeader = `bg-blue-950 text-white rounded-t-xl md:rounded-r-none md:rounded-l-xl p-2 flex items-center justify-center md:min-w-36 font-bold`;
-  const contentText = `bg-gray-100 rounded-b-xl md:rounded-l-none md:rounded-r-xl p-2 text-center md:text-justify`;
+  const contentText = `bg-gray-100 rounded-b-xl md:rounded-l-none md:rounded-r-xl p-2 text-justify`;
 
   return (
     <div className="bg-gray-300 min-h-[84vh] p-2">
